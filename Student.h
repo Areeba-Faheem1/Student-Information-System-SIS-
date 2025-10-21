@@ -16,7 +16,7 @@ public:
     Student();
 
     // Parameterized constructor 
-    Student(string n, int a , int r , float g );
+    Student(string n, int a, int r, float g);
 
     // Destructor
     ~Student();
@@ -37,5 +37,3 @@ public:
 
     char calculateGrade();
 };
-
-

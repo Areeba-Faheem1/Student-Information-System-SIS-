@@ -1,74 +1,34 @@
-
+// main.cpp
 #include "Student.h"
 using namespace std;
 
-// Default Constructor
-Student::Student() {
-    name = "Unknown";
-    age = 0;
-    rollNo = 0;
-    gpa = 0;
-    cout << "Default Student created.\n";
-}
+int main() {
+    cout << "Student Information System (SIS) " << endl;
 
-// Parameterized Constructor
-Student::Student(string n, int a, int r, float g) {
-    name = n;
-    age = a;
-    rollNo = r;
-    gpa = g;
-    cout << "Parameterized Student created: " << name << "\n";
-}
+    // Student 1,Default constructor 
+    Student s1;
+    s1.setName("Areeba");
+    s1.setAge(20);
+    s1.setRollNo(92);
+    s1.setGpa(4.0);
+    s1.displayInfo();
 
-// Destructor
-Student::~Student() {
-    cout << "Student record for " << name << " has been destroyed.\n";
-}
+    cout << endl;
 
-// Getters 
-string Student::getName() {
-    return name;
-}
-int Student::getAge() { 
-    return age; 
-}
-int Student::getRollNo() {
-    return rollNo; 
-}
-float Student::getGpa() { 
-    return gpa;
-}
-// Setters
-void Student::setName(string n) { 
-    name = n; 
-}
-void Student::setAge(int a) { 
-    age = a;
-}
-void Student::setRollNo(int r) {
-    rollNo = r; 
-}
-void Student::setGpa(float g) {
-    gpa = g; 
-}
+    // Student 2,parameterized constructor
+    Student s2("Sara", 19, 102, 3.2);
+    s2.displayInfo();
+    cout << endl;
 
-void Student::displayInfo() {
-    cout << "Name: " << name
-        << " | Age: " << age
-        << " | Roll No: " << rollNo
-        << " | GPA: " << gpa
-        << " | Grade: " << calculateGrade() << "\n";
-}
+    // Student 3,parameterized constructor
+    Student s3;
+    s3.setName("Ayesha");
+    s3.setAge(21);
+    s3.setRollNo(111);
+    s3.setGpa(2.8);
+    s3.displayInfo();
 
-char Student::calculateGrade() {
-    if (gpa >= 3.5) 
-        return 'A';
-    else if (gpa >= 3.0)
-        return 'B';
-    else if (gpa >= 2.0) 
-        return 'C';
-    else if (gpa >= 1.0) 
-        return 'D';
-    else 
-        return 'F';
+    cout << "\n All Records \n";
+
+    return 0;
 }
